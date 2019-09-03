@@ -22,6 +22,8 @@
       <textarea id='ta_text' class="form-control" rows='5'></textarea>
       <input id='btn_run' type='button' class='btn btn-block btn-primary my-3' value='Run' />
 
+      <p class='lead'></p>
+
       <div class='output row'>
         <div class='col'>
           <table class='category table'>
@@ -57,11 +59,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- app -->
-    <script>
-      // set default text
-      let text = "นายภาณุวัฒน์ ยังพยากรณ์อีกว่า การเปิดอภิปรายทั่วไปของฝ่ายค้าน จะไม่เกิดปัญหาต่อนายกรัฐมนตรี ส่วนจะมีปัญหาเข้ามากระทบการทำงานของรัฐบาลในช่วงนี้หรือไม่ นายภาณุวัฒน์ ระบุว่า การทำงานย่อมมีอุปสรรค เข้ามาเป็นช่วงๆ จังหวะไหนไม่ดี ก็ต้องชะลอ";
-      $('#ta_text').val(text);
-    </script>
+    <script src='/static/js/hilight.js'></script>
     <script src='/static/js/app.js'></script>
   </body>
 </html>
