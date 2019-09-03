@@ -40,7 +40,7 @@ def get_entities(client, text):
     ]
 
 def get_entities_th(lang_client, tran_client, text_th):
-    text_en = translate_th_en(tran_client, text)
+    text_en = translate_th_en(tran_client, text_th)
     entities = get_entities(lang_client, text_en)
     return [
         {

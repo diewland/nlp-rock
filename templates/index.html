@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>NLP Rock</title>
+  </head>
+  <body>
+
+    <div class='container'>
+      <h1>
+        <img src='/static/images/thailand_round_icon_64.png'>
+        NLP Rock
+      </h1>
+
+      <h3>Input Text</h3>
+      <textarea id='ta_text' class="form-control" rows='5'>Pokemon Masters เป็นอีกหนึ่งผลงานชั้นดีจาก DeNa ที่ได้นำซีรีส์เกมยอดฮิตอย่างโปเกม่อนมาลงเป็นเกมมือถือ ซึ่งมาในรูปแบบกม RPG ที่มีความเป็น TurnBase อยู่ด้วย และนี่จะเป็นครั้งแรกของเกมโปเกม่อนบนมือถือที่จะได้พบกับเหล่าเทรนเนอร์คุ้นหน้าคุ้นตาจากอนิเมะ หรือเกมภาคก่อนๆ มาร่วมเสริมเติมความสนุกกันแบบไม่อั้น</textarea>
+      <input id='btn_run' type='button' class='btn btn-block btn-primary my-3' value='Run' />
+
+      <div class='output row'>
+        <div class='col'>
+          <table class='category table'>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Percent</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class='col'>
+         <table class='entity table'>
+            <thead>
+              <tr>
+                <th>Text</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- app -->
+    <script src='/static/js/app.js'></script>
+  </body>
+</html>

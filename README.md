@@ -1,4 +1,4 @@
-# nlp-rock-th
+# nlp-rock
 
 ### References
 * https://cloud.google.com/natural-language/docs/reference/rest/
