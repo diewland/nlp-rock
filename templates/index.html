@@ -19,7 +19,7 @@
       </h1>
 
       <h3>Input Text</h3>
-      <textarea id='ta_text' class="form-control" rows='5'>Pokemon Masters เป็นอีกหนึ่งผลงานชั้นดีจาก DeNa ที่ได้นำซีรีส์เกมยอดฮิตอย่างโปเกม่อนมาลงเป็นเกมมือถือ ซึ่งมาในรูปแบบกม RPG ที่มีความเป็น TurnBase อยู่ด้วย และนี่จะเป็นครั้งแรกของเกมโปเกม่อนบนมือถือที่จะได้พบกับเหล่าเทรนเนอร์คุ้นหน้าคุ้นตาจากอนิเมะ หรือเกมภาคก่อนๆ มาร่วมเสริมเติมความสนุกกันแบบไม่อั้น</textarea>
+      <textarea id='ta_text' class="form-control" rows='5'></textarea>
       <input id='btn_run' type='button' class='btn btn-block btn-primary my-3' value='Run' />
 
       <div class='output row'>
@@ -57,6 +57,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <!-- app -->
+    <script>
+      // set default text
+      let text = "นายภาณุวัฒน์ ยังพยากรณ์อีกว่า การเปิดอภิปรายทั่วไปของฝ่ายค้าน จะไม่เกิดปัญหาต่อนายกรัฐมนตรี ส่วนจะมีปัญหาเข้ามากระทบการทำงานของรัฐบาลในช่วงนี้หรือไม่ นายภาณุวัฒน์ ระบุว่า การทำงานย่อมมีอุปสรรค เข้ามาเป็นช่วงๆ จังหวะไหนไม่ดี ก็ต้องชะลอ";
+      $('#ta_text').val(text);
+    </script>
     <script src='/static/js/app.js'></script>
   </body>
 </html>
