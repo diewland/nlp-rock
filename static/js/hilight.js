@@ -20,12 +20,12 @@ function hilight_entities(dom, entities){
 
   // mark hilight by btoa
   entities.forEach((en, i) => {
-    html = html.replace(RegExp(en.name, 'i'), `___${btoa(i)}___`);
+    html = html.replace(RegExp(en.name, 'g'), `___${btoa(i)}___`);
   });
 
   // update text
   entities.forEach((en, i) => {
-    html = html.replace(RegExp(`___${btoa(i)}___`, 'i'),
+    html = html.replace(RegExp(`___${btoa(i)}___`, 'g'),
             `<span style='background-color: ${_type_colors[en.type]};'>${en.name}</span>`);
   });
 
