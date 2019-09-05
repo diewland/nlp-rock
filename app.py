@@ -14,18 +14,19 @@ def hello():
 
 # process
 def do_nlp_process(text):
-    categories = classify_th(lang_client, tran_client, text)
+    categories, text_en = classify_th(lang_client, tran_client, text)
     entities = get_entities_th(lang_client, tran_client, text)
-    return categories, entities
+    return categories, entities, text_en
 
 # controller
 @app.route('/nlp_rock', methods=['POST'])
 def trible():
     text = request.json.get('text')
-    classes, entities = do_nlp_process(text)
+    classes, entities, text_en = do_nlp_process(text)
     return jsonify({
         'classes': classes,
         'entities': entities,
+        'translate': text_en,
     })
 
 if __name__ == '__main__':

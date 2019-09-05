@@ -24,9 +24,11 @@ def get_entities(client, text):
         content=text,
         type=enums.Document.Type.PLAIN_TEXT)
 
-    # Detects entities in the document. You can also analyze HTML with:
-    #   document.type == enums.Document.Type.HTML
-    entities = client.analyze_entities(document).entities
+    # analyze entity and sentiment at the same time
+    entities = client.analyze_entity_sentiment(
+        document=document,
+        encoding_type='UTF32',
+    ).entities
 
     # return list of result
     return [
@@ -34,8 +36,9 @@ def get_entities(client, text):
             'name': entity.name,
             'type': enums.Entity.Type(entity.type).name,
             'salience': entity.salience,
-            'wiki_url': entity.metadata.get('wikipedia_url', None),
-            'mid': entity.metadata.get('mid', None),
+            'mention_type': enums.EntityMention.Type(entity.mentions[0].type).name,
+            'magnitude': entity.sentiment.magnitude,
+            'score': entity.sentiment.score,
         } for entity in entities
     ]
 
@@ -47,6 +50,10 @@ def get_entities_th(lang_client, tran_client, text_th):
             '_name': entity['name'],
             'name': translate_en_th(tran_client, entity['name']),
             'type': entity['type'],
+            'salience': entity['salience'],
+            'mention_type': entity['mention_type'],
+            'magnitude': entity['magnitude'],
+            'score': entity['score'],
         } for entity in entities
     ]
 
@@ -80,7 +87,7 @@ def classify(lang_client, text, verbose=False):
 
 def classify_th(lang_client, tran_client, text_th, verbose=False):
     text_en = translate_th_en(tran_client, text_th)
-    return classify(lang_client, text_en, verbose)
+    return classify(lang_client, text_en, verbose), text_en
 
 if __name__== "__main__":
 
@@ -100,7 +107,7 @@ if __name__== "__main__":
     tran_client = translate.Client()
 
     # classify
-    classify_result = classify_th(lang_client, tran_client, text)
+    classify_result, _ = classify_th(lang_client, tran_client, text)
 
     # extract entities
     result = get_entities_th(lang_client, tran_client, text)
